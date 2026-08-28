@@ -1,0 +1,78 @@
+{
+  "created_utc": "2026-08-17T13:38:29.597558+00:00",
+  "model": "NeuroToxPredictor",
+  "data_sha256": "5fd96f6561452cfec76dd52a58e13f1000bb515c91ce993138ab70343b484ec8",
+  "raw_samples": 4926,
+  "usable_samples": 4911,
+  "excluded_conflicting_structure_label_rows": 15,
+  "structure_groups": 4905,
+  "split_sizes_unique_records": {
+    "train": 3927,
+    "val": 492,
+    "test": 492
+  },
+  "train_resampled_size": 4098,
+  "gating_regularization": {
+    "uniform_warmup_epochs": 15,
+    "branch_auxiliary_loss_weight": 0.2,
+    "mean_gate_balance_loss_weight": 0.05,
+    "minimum_modality_weight": 0.05
+  },
+  "early_stopping": {
+    "monitor": "validation loss",
+    "patience": 10,
+    "min_delta": 1e-06,
+    "best_epoch": 22,
+    "best_val_loss": 0.6045231521129608,
+    "epochs_ran": 32
+  },
+  "feature_selection": {
+    "method": "MACCS fit on training split only",
+    "selected_bit_count": 150
+  },
+  "config": {
+    "seed": 3407,
+    "split_seed": 42,
+    "resample_seed": 0,
+    "batch_size": 256,
+    "epochs": 200,
+    "learning_rate": 0.0005,
+    "weight_decay": 0.0005,
+    "label_smoothing": 0.1,
+    "graph_hidden_dims": [
+      64,
+      32
+    ],
+    "graph_out_dim": 64,
+    "finger_hidden_dim": 128,
+    "finger_out_dim": 32,
+    "chem_hidden_dim": 256,
+    "chem_out_dim": 64,
+    "heads": 4,
+    "dropout": 0.5,
+    "warmup_epochs": 15,
+    "temperature_start": 3.0,
+    "temperature_end": 1.0,
+    "temperature_end_epoch": 50,
+    "min_gate_weight": 0.05,
+    "auxiliary_loss_weight": 0.2,
+    "balance_loss_weight": 0.05,
+    "selection_metric": "val_loss"
+  },
+  "model_config": {
+    "graph_in_dim": 26,
+    "graph_hidden_dims": [
+      64,
+      32
+    ],
+    "graph_out_dim": 64,
+    "finger_in_dim": 150,
+    "finger_hidden_dim": 128,
+    "finger_out_dim": 32,
+    "chem_in_dim": 768,
+    "chem_hidden_dim": 256,
+    "chem_out_dim": 64,
+    "heads": 4,
+    "dropout": 0.5
+  }
+}
