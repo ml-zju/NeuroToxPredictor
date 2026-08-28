@@ -1,0 +1,8 @@
+torch
+dgl
+numpy
+pandas
+scikit-learn
+rdkit
+transformers
+tqdm
